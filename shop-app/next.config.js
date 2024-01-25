@@ -1,4 +1,4 @@
-const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
+const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,21 +10,23 @@ const nextConfig = {
     //config.experiments = { topLevelAwait: true, layers: false };
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'shop',
+        name: "shop",
         remotes: {
-          main: `main@http://localhost:3000/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          main: `main@http://localhost:3000/_next/static/${
+            isServer ? "ssr" : "chunks"
+          }/remoteEntry.js`,
         },
-        filename: 'static/chunks/remoteEntry.js',
-        exposes:{
-          './catalog': "./components/Catalog.js"
+        filename: "static/chunks/remoteEntry.js",
+        exposes: {
+          "./sh": "./components/Shop.js",
         },
         extraOptions: {
-          exposePages: true
-        }
+          exposePages: true,
+        },
       })
     );
     return config;
-  }
-}
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

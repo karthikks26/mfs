@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import Shop from "../components/Shop";
+import Batman from "../components/Batman";
 
 // const Nav = dynamic(()=> import("main/nav"));
 // const Footer = dynamic(()=> import("main/footer"));
@@ -19,7 +19,7 @@ export default function Home() {
       {/* <Nav>This is the nav in app 2</Nav> */}
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to the Shop app port: 3001</h1>
-        <Shop />
+        <Batman />
       </main>
       {/* <Footer></Footer> */}
     </div>
